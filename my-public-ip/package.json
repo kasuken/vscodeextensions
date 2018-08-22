@@ -2,7 +2,7 @@
     "name": "my-public-ip",
     "displayName": "My Public Ip",
     "description": "Display your public ip on the status bar",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "publisher": "emanuelebartolesi",
     "engines": {
         "vscode": "^1.25.0"
@@ -17,7 +17,7 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.updateMyIp",
+                "command": "mypublicip.updateMyIp",
                 "title": "Show my public Ip"
             }
         ]

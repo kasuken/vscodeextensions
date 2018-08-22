@@ -1,7 +1,7 @@
 const vscode = require('vscode');
 const rp = require("request-promise");
 
-function GetIp() {
+function DisplayIp() {
 
     const options = {
         method: "GET",
@@ -16,7 +16,7 @@ function GetIp() {
 
         const statusBarItem = vscode.window.createStatusBarItem();
         statusBarItem.text = "Public Ip: " + ip;
-        statusBarItem.command = "extension.openMyIpSite";
+        statusBarItem.command = "mypublicip.openMyIpSite";
         
         statusBarItem.show();
       });
@@ -25,19 +25,19 @@ function GetIp() {
 
 function activate(context) {
 
-    let updateMyIp = vscode.commands.registerCommand('extension.updateMyIp', function () {
-        GetIp();
+    let updateMyIp = vscode.commands.registerCommand('mypublicip.updateMyIp', function () {
+        DisplayIp();
     });
 
     context.subscriptions.push(updateMyIp);
 
-    let openMyIpSite = vscode.commands.registerCommand('extension.openMyIpSite', function () {
+    let openMyIpSite = vscode.commands.registerCommand('mypublicip.openMyIpSite', function () {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse('https://www.whatismyip.com/'));
     });
 
     context.subscriptions.push(openMyIpSite);
 
-    GetIp();
+    DisplayIp();
 }
 exports.activate = activate;
 
