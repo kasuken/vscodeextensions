@@ -13,22 +13,31 @@ function GetIp() {
     
       rp(options).then(r => {
         const ip = r;
-        vscode.window.setStatusBarMessage("Public Ip: " + ip);
+
+        const statusBarItem = vscode.window.createStatusBarItem();
+        statusBarItem.text = "Public Ip: " + ip;
+        statusBarItem.command = "extension.openMyIpSite";
+        
+        statusBarItem.show();
       });
 
 }
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 function activate(context) {
 
-    let disposable = vscode.commands.registerCommand('extension.updateMyIp', function () {
+    let updateMyIp = vscode.commands.registerCommand('extension.updateMyIp', function () {
         GetIp();
     });
 
-   GetIp();
+    context.subscriptions.push(updateMyIp);
 
-    context.subscriptions.push(disposable);
+    let openMyIpSite = vscode.commands.registerCommand('extension.openMyIpSite', function () {
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse('https://www.whatismyip.com/'));
+    });
+
+    context.subscriptions.push(openMyIpSite);
+
+    GetIp();
 }
 exports.activate = activate;
 

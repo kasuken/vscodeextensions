@@ -18,7 +18,7 @@
         "commands": [
             {
                 "command": "extension.updateMyIp",
-                "title": "Show my Ip"
+                "title": "Show my public Ip"
             }
         ]
     },
