@@ -1,4 +1,4 @@
-# my-public-ip README
+# My Public Ip for Visual Studio Code
 
 With this extension you can see your public ip in the status bar.
 
