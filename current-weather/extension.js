@@ -12,20 +12,22 @@ function UpdateWeather() {
       };
     
       rp(options).then(r => {
-        const currentWeather = r;
+        var currentWeather = r;
 
-        vscode.window.setStatusBarMessage("$(radio-tower) Current Weather: " + currentWeather.current.condition.text + " - Temp: " + currentWeather.current.temp_c + "°");
+        vscode.window.setStatusBarMessage("$(radio-tower) Current Weather at " + currentWeather.location.name + ": " + currentWeather.current.condition.text + " - Temp: " + currentWeather.current.temp_c + "°");
         vscode.window.showInformationMessage ('The weather in ' + currentWeather.location.name + " is " + currentWeather.current.condition.text + " with a temperature of " + currentWeather.current.temp_c + "°.");
       });
 }
 
 function activate(context) {
 
-    let disposable = vscode.commands.registerCommand('extension.updateWeather', function () {
+    let disposable = vscode.commands.registerCommand('current-weather.updateWeather', function () {
         UpdateWeather();
     });
 
     UpdateWeather();
+
+    setInterval(UpdateWeather, 3600000);
 
     context.subscriptions.push(disposable);
 }
