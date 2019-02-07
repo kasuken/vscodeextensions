@@ -1,39 +1,57 @@
 {
-    "name": "my-public-ip",
-    "displayName": "My Public Ip",
-    "description": "Display your public ip on the status bar",
-    "version": "0.0.6",
-    "publisher": "emanuelebartolesi",
-    "engines": {
-        "vscode": "^1.25.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "mypublicip.updateMyIp",
-                "title": "Show my public Ip"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "eslint": "^4.11.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
-    },
-    "dependencies": {
-        "request-promise": "^4.2.2"
-    }
+  "name": "my-public-ip",
+  "displayName": "My Public Ip",
+  "description": "Display your public ip on the status bar",
+  "version": "0.0.8",
+  "publisher": "emanuelebartolesi",
+  "author": {
+    "name": "Emanuele Bartolesi"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/kasuken/vscodeextensions/issues",
+    "email": "bartolesiemanuele@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kasuken/vscodeextensions.git"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#FFFFFF",
+    "theme": "light"
+  },
+  "homepage": "https://github.com/kasuken/vscodeextensions/blob/master/README.md",
+  "engines": {
+    "vscode": "^1.30.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mypublicip.updateMyIp",
+        "title": "Show my public Ip"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "eslint": "^4.11.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "request-promise": "^4.2.2"
+  }
 }
