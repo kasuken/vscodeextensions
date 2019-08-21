@@ -21,3 +21,7 @@ Initial release
 #### New features
 
 - documentation url in the hover box
+
+### 1.0.2
+
+Changed the MDN url in the box

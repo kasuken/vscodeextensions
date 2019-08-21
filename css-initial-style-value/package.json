@@ -2,7 +2,7 @@
 	"name": "css-initial-style-value",
 	"displayName": "CSS Initial Style Value",
 	"description": "Display the default/initial value for each css style property.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"vscode": "^1.37.0"
 	},

@@ -48,7 +48,7 @@ ${properties.join('\n')}
     else {
         value = `Initial value: \`${initialValue}\``;
     }
-    value = value + `\n\n More info: \`${mdnUrl}\``;
+    value = value + `\n\n [Read More on MDN]:(${mdnUrl}`;
     return new vscode.MarkdownString(value);
 }
 function deactivate() { }
