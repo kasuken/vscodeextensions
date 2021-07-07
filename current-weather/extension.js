@@ -4,7 +4,7 @@ const rp = require("request-promise");
 function UpdateWeather() {
     const options = {
         method: "GET",
-        uri: "https://api.apixu.com/v1/current.json?key=4cb51e4aeb5f48d0b3d02832181803&q=auto:ip",
+        uri: "http://api.weatherstack.com//v1/current.json?key=4cb51e4aeb5f48d0b3d02832181803&q=auto:ip",
         headers: {
           "User-Agent": "Request-Promise"
         },
